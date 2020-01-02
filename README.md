@@ -3,8 +3,8 @@
 Apple Calendar to .csv <br>
 (with Automator (macOS only))
 ___
-### Overview
-__IMPORTANT__: Create an Automator-Calendar event (repeated monthly) to automatically run to [workflow](automator/workcal.workflow)
+### IMPORTANT
+Create an Automator-Calendar event (repeated monthly) to automatically run to [workflow](automator/workcal.workflow)
 
 ### Overview
 + Automator does Event Summary of a Single Calendar (Choose Calendar)
