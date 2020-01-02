@@ -236,7 +236,9 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>do shell script "/Users/nilsseitz/anaconda3/bin/python /Users/nilsseitz/Coding/Conda/workcal/code/__main__.py"</string>
+					<string>do shell script ".../workcal/code/__main__.py"
+
+</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
