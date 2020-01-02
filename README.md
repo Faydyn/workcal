@@ -1,22 +1,15 @@
 # workcal
-Apple .ics to csv
+###### by faydyn
+Apple Calendar to .csv <br>
+(with Automator (macOS only))
+___
+### Overview
+__IMPORTANT__: Create an Automator-Calendar event (repeated monthly) to automatically run to [workflow](automator/workcal.workflow)
 
-### works
-* scans dir (one!) of files for specific words (e.g. "work") 
-    + so manually search for "work.ics" and copy in folder "data/workfiles"
-    + change Magic words 
-* gets relevant Datetimeline from file
-* parses file and converts to actual Datetime
-    + Saves Start of Shift (Datatime)
-    + and Amount of minutes for each shift (int)
-* gets todays date and calcs last months range (with uneven months, leap etc)
-* filters the data, so only last month is included
-* creates Pandas DataFrame
-* DataFrame does adding and splitting for my needs
-* DataFrame now contains correct content
-* converts to csv in correct format (except bottom)
+### Overview
++ Automator does Event Summary of a Single Calendar (Choose Calendar)
++ python is run via apple-script (Update path)
++ Saves csv to Desktop
 
-### needsdoing
-* make to integration of csv to to __"official file" automated (+ pdf conv + auto mail)__**
-* 450 Border: Magic Const (pay per hour) * Arbeitszeit until now
-* shift that are after 00:00
+Some other actions are for my own comfort (puts some alias to Desktop).
+
