@@ -21,33 +21,442 @@
 					<true/>
 					<key>Types</key>
 					<array>
-						<string>*</string>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>fileNames</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Specified Finder Items.action</string>
+				<key>ActionName</key>
+				<string>Get Specified Finder Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>fileNames</key>
+					<array>
+						<string>~/Documents/Arbeit/Waldperle/Stundenzettel_Official.numbers</string>
+						<string>~/Documents/Arbeit/Waldperle/Stunden2020</string>
+					</array>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.SpecifiedFiles</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>SpecifiedFilesAction</string>
+				<key>InputUUID</key>
+				<string>A1F6D4FE-8FF4-46CE-A2D6-861E3DAF437F</string>
+				<key>Keywords</key>
+				<array>
+					<string>File</string>
+					<string>Choose</string>
+					<string>Find</string>
+					<string>Get</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>34C203F7-194F-4EBF-8B84-38AB5F5312C8</string>
+				<key>UUID</key>
+				<string>5B2069EF-84F8-4F0B-B906-F5D90566A0A1</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<array/>
+						<key>name</key>
+						<string>fileNames</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>769.000000:43.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
 				<string>2.0.1</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Automator</string>
+					<string>Finder</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
-					<key>batchItems</key>
-					<dict/>
-					<key>documentPath</key>
+					<key>destination</key>
 					<dict>
 						<key>isPathPopUp</key>
 						<true/>
 						<key>variableUUIDsInMenu</key>
 						<array/>
 					</dict>
-					<key>itemsBatchSize</key>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.path</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/New Aliases.action</string>
+				<key>ActionName</key>
+				<string>New Aliases</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>destination</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.NewAliases</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryFilesAndFolders</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMCreateAliasAction</string>
+				<key>InputUUID</key>
+				<string>E541310E-1CE8-411A-9776-84F3F56B29EA</string>
+				<key>Keywords</key>
+				<array/>
+				<key>OutputUUID</key>
+				<string>C91B12AF-8902-42A7-9AD3-841D8749BBCF</string>
+				<key>UUID</key>
+				<string>A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>destination</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>769.000000:84.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/New Aliases.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.event-kit.item</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Calendar</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>items</key>
 					<dict/>
-					<key>numberOfWorkflows</key>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.event-kit.item</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Get Specified Calendar Items.action</string>
+				<key>ActionName</key>
+				<string>Get Specified Calendar Items</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>items</key>
+					<array>
+						<dict>
+							<key>kind</key>
+							<string>calendar</string>
+							<key>name</key>
+							<string>Work</string>
+							<key>uid</key>
+							<string>D7959DA5-7FB4-4C54-94A9-ABA4E1FA6E53</string>
+						</dict>
+					</array>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.GetSpecifiediCalItems</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryCalendar</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMGetiCalItemsAction</string>
+				<key>InputUUID</key>
+				<string>0029F0E8-FA04-43BC-830B-061B72FBBF72</string>
+				<key>Keywords</key>
+				<array>
+					<string>Calendar</string>
+					<string>Calendars</string>
+					<string>Get</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>580D43ED-FFBC-4D2E-8B7F-7AC9F8B4778C</string>
+				<key>UUID</key>
+				<string>89892A1F-00AA-4B70-B516-7EB664611D9C</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Calendar</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<array/>
+						<key>name</key>
+						<string>items</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>769.000000:125.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Get Specified Calendar Items.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.event-kit.item</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Calendar</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>summaryRange</key>
 					<dict/>
-					<key>returnWorkflowOutput</key>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Event Summary.action</string>
+				<key>ActionName</key>
+				<string>Event Summary</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>summaryRange</key>
+					<integer>0</integer>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.EventSummary</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<false/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryCalendar</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMEventSummaryAction</string>
+				<key>InputUUID</key>
+				<string>05B251BA-E095-445D-8A05-3807D6E8C469</string>
+				<key>Keywords</key>
+				<array>
+					<string>Summary</string>
+					<string>Event</string>
+					<string>Calendar</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>5CD49C86-164F-4640-8BF0-4C3778B337FB</string>
+				<key>UUID</key>
+				<string>E8A71AE7-04A1-494C-A47F-D1C8F5925F99</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Calendar</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>summaryRange</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+						<string>com.apple.cocoa.attributed-string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.2.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Finder</string>
+					<string>TextEdit</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>checkedForDefaultEncoding</key>
 					<dict/>
-					<key>waitForWorkflow</key>
+					<key>newFileFolderPath</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<true/>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+					<key>newFileName</key>
+					<dict>
+						<key>tokenizedValue</key>
+						<array>
+							<string>work</string>
+						</array>
+					</dict>
+					<key>newFileTextEncoding</key>
+					<dict/>
+					<key>replaceExistingFiles</key>
+					<dict/>
+					<key>textFormat</key>
 					<dict/>
 				</dict>
 				<key>AMProvides</key>
@@ -60,58 +469,67 @@
 					</array>
 				</dict>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Run Workflow.action</string>
+				<string>/System/Library/Automator/New Text File.action</string>
 				<key>ActionName</key>
-				<string>Run Workflow</string>
+				<string>New Text File</string>
 				<key>ActionParameters</key>
 				<dict>
-					<key>batchItems</key>
-					<integer>0</integer>
-					<key>documentPath</key>
-					<string>~/Library/Mobile Documents/com~apple~Automator/Documents/getallics.workflow</string>
-					<key>itemsBatchSize</key>
+					<key>checkedForDefaultEncoding</key>
+					<true/>
+					<key>newFileFolderPath</key>
+					<string>~/Desktop</string>
+					<key>newFileName</key>
+					<string>work.txt</string>
+					<key>newFileTextEncoding</key>
+					<integer>4</integer>
+					<key>replaceExistingFiles</key>
+					<true/>
+					<key>textFormat</key>
 					<integer>1</integer>
-					<key>numberOfWorkflows</key>
-					<integer>0</integer>
-					<key>returnWorkflowOutput</key>
-					<true/>
-					<key>waitForWorkflow</key>
-					<true/>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.ExecuteWorkflow</string>
+				<string>com.apple.Automator.NewTextFile</string>
 				<key>CFBundleVersion</key>
-				<string>2.0.1</string>
+				<string>2.2.1</string>
 				<key>CanShowSelectedItemsWhenRun</key>
 				<true/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
 				<array>
-					<string>AMCategoryUtilities</string>
+					<string>AMCategoryText</string>
 				</array>
 				<key>Class Name</key>
-				<string>ExecuteWorkflow</string>
+				<string>AMNewTextFileAction</string>
 				<key>InputUUID</key>
-				<string>F1CFFB8C-15AA-4E2A-9FB4-B826D36225F7</string>
+				<string>40B995A1-2608-4F85-9355-7CF13CF9B039</string>
 				<key>Keywords</key>
-				<array/>
+				<array>
+					<string>Create</string>
+					<string>Make</string>
+					<string>File</string>
+					<string>Text</string>
+					<string>Save</string>
+					<string>New</string>
+					<string>Document</string>
+				</array>
 				<key>OutputUUID</key>
-				<string>9CD10B9C-7A89-4AB9-A0BC-8C046473DE1E</string>
+				<string>F411E2A2-FE0B-4565-AA3E-1B0BEF78F459</string>
 				<key>UUID</key>
-				<string>B7B2CC4F-CD8D-404A-8003-615F7F5AC7A1</string>
+				<string>43203CB7-86C9-47B9-AE4E-8550C92C72ED</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Automator</string>
+					<string>Finder</string>
+					<string>TextEdit</string>
 				</array>
 				<key>arguments</key>
 				<dict>
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<integer>1</integer>
+						<integer>0</integer>
 						<key>name</key>
-						<string>itemsBatchSize</string>
+						<string>newFileTextEncoding</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -122,9 +540,9 @@
 					<key>1</key>
 					<dict>
 						<key>default value</key>
-						<true/>
+						<string>~/Desktop</string>
 						<key>name</key>
-						<string>waitForWorkflow</string>
+						<string>newFileFolderPath</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -137,7 +555,7 @@
 						<key>default value</key>
 						<integer>0</integer>
 						<key>name</key>
-						<string>numberOfWorkflows</string>
+						<string>replaceExistingFiles</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -148,9 +566,9 @@
 					<key>3</key>
 					<dict>
 						<key>default value</key>
-						<false/>
+						<integer>0</integer>
 						<key>name</key>
-						<string>batchItems</string>
+						<string>checkedForDefaultEncoding</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -161,9 +579,9 @@
 					<key>4</key>
 					<dict>
 						<key>default value</key>
-						<string></string>
+						<string>Untitled.txt</string>
 						<key>name</key>
-						<string>documentPath</string>
+						<string>newFileName</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -174,9 +592,9 @@
 					<key>5</key>
 					<dict>
 						<key>default value</key>
-						<true/>
+						<integer>0</integer>
 						<key>name</key>
-						<string>returnWorkflowOutput</string>
+						<string>textFormat</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -186,14 +604,14 @@
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<false/>
 				<key>location</key>
-				<string>645.500000:188.000000</string>
+				<string>769.000000:207.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run Workflow.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/New Text File.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -236,8 +654,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>do shell script ".../workcal/code/__main__.py"
-
+					<string>do shell script ".../workcal/__main__.py"
 </string>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -292,7 +709,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>645.500000:229.000000</string>
+				<string>769.000000:248.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -392,14 +809,14 @@ end run</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<false/>
 				<key>location</key>
-				<string>645.500000:466.000000</string>
+				<string>769.000000:289.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -467,26 +884,54 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>22C44578-CAEF-4FAB-9AB9-AECBC9A91EDB</key>
+		<key>0608E029-308E-48D1-841D-593BB15F165B</key>
+		<dict>
+			<key>from</key>
+			<string>E8A71AE7-04A1-494C-A47F-D1C8F5925F99 - E8A71AE7-04A1-494C-A47F-D1C8F5925F99</string>
+			<key>to</key>
+			<string>43203CB7-86C9-47B9-AE4E-8550C92C72ED - 43203CB7-86C9-47B9-AE4E-8550C92C72ED</string>
+		</dict>
+		<key>55028862-9EC6-4C08-AA85-0FEF05E343C0</key>
 		<dict>
 			<key>from</key>
 			<string>C49D1DD5-2A01-4C48-844F-3D77002A95C8 - C49D1DD5-2A01-4C48-844F-3D77002A95C8</string>
 			<key>to</key>
 			<string>7DDF8558-DFBF-4B58-AEA1-B2545DE6F04A - 7DDF8558-DFBF-4B58-AEA1-B2545DE6F04A</string>
 		</dict>
-		<key>7624EC2E-F84E-4232-B0AF-B66433B2EB1B</key>
+		<key>5835C0BD-0A87-404E-99D7-06EB648DE3D1</key>
 		<dict>
 			<key>from</key>
-			<string>B7B2CC4F-CD8D-404A-8003-615F7F5AC7A1 - B7B2CC4F-CD8D-404A-8003-615F7F5AC7A1</string>
+			<string>A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F - A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F</string>
+			<key>to</key>
+			<string>89892A1F-00AA-4B70-B516-7EB664611D9C - 89892A1F-00AA-4B70-B516-7EB664611D9C</string>
+		</dict>
+		<key>65875245-9B27-4CAD-8175-B8EC8B6F4C8E</key>
+		<dict>
+			<key>from</key>
+			<string>43203CB7-86C9-47B9-AE4E-8550C92C72ED - 43203CB7-86C9-47B9-AE4E-8550C92C72ED</string>
 			<key>to</key>
 			<string>89A9EAC1-A993-4AA8-AD1A-0AEC380A5CC0 - 89A9EAC1-A993-4AA8-AD1A-0AEC380A5CC0</string>
 		</dict>
-		<key>A19DFBC2-2326-4265-8DB9-75EA164D6A49</key>
+		<key>6D075372-30E1-4E0D-83C3-724594BF9468</key>
 		<dict>
 			<key>from</key>
 			<string>89A9EAC1-A993-4AA8-AD1A-0AEC380A5CC0 - 89A9EAC1-A993-4AA8-AD1A-0AEC380A5CC0</string>
 			<key>to</key>
 			<string>C49D1DD5-2A01-4C48-844F-3D77002A95C8 - C49D1DD5-2A01-4C48-844F-3D77002A95C8</string>
+		</dict>
+		<key>70874E35-6A13-4F66-9686-CF827BE99B7C</key>
+		<dict>
+			<key>from</key>
+			<string>5B2069EF-84F8-4F0B-B906-F5D90566A0A1 - 5B2069EF-84F8-4F0B-B906-F5D90566A0A1</string>
+			<key>to</key>
+			<string>A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F - A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F</string>
+		</dict>
+		<key>F4F33B33-E5AF-4A0B-8BA1-539D65FC53D3</key>
+		<dict>
+			<key>from</key>
+			<string>89892A1F-00AA-4B70-B516-7EB664611D9C - 89892A1F-00AA-4B70-B516-7EB664611D9C</string>
+			<key>to</key>
+			<string>E8A71AE7-04A1-494C-A47F-D1C8F5925F99 - E8A71AE7-04A1-494C-A47F-D1C8F5925F99</string>
 		</dict>
 	</dict>
 	<key>variables</key>

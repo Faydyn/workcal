@@ -7,8 +7,8 @@ from datetime import date
 
 OFFICIAL_MAX = 48
 tday = date.today()
-endoflastmon = tday - datetime.timedelta(days=tday.day)
-startoflastmon = endoflastmon - datetime.timedelta(days=endoflastmon.day - 1)
+endoflastmon = pd.Timestamp(tday - datetime.timedelta(days=tday.day))
+startoflastmon = pd.Timestamp(endoflastmon - datetime.timedelta(days=endoflastmon.day - 1))
 path = '/Users/nilsseitz/Desktop/work.txt'
 
 
@@ -45,12 +45,15 @@ def make_dataframe(single_shifts):
 
 def make_official_df(workedlastmonth):
     official_split = OFFICIAL_MAX * 60
-
-    workedlastmonth_official = workedlastmonth[workedlastmonth['amount_min'].cumsum() < official_split]
-    rest = official_split - workedlastmonth_official['amount_min'].sum()
-    workedlastmonth_official = workedlastmonth_official.append(workedlastmonth.iloc[len(workedlastmonth_official), :])
-    workedlastmonth_official.loc[len(workedlastmonth_official) - 1, 'amount_min'] = rest
-    return workedlastmonth_official.fillna(0), OFFICIAL_MAX
+    sum_of_workinghours = workedlastmonth['amount_min'].sum()
+    if official_split > sum_of_workinghours:  # Error otherwise!
+        return workedlastmonth.fillna(0), sum_of_workinghours / 60
+    else:
+        workedlastmonth_official = workedlastmonth[workedlastmonth['amount_min'].cumsum() < official_split]
+        rest = official_split - workedlastmonth_official['amount_min'].sum()
+        workedlastmonth_official = workedlastmonth_official.append(workedlastmonth.loc[len(workedlastmonth_official)])
+        workedlastmonth_official.loc[len(workedlastmonth_official) - 1, 'amount_min'] = rest
+        return workedlastmonth_official.fillna(0), OFFICIAL_MAX
 
 
 def format_dataframe(df):
@@ -64,7 +67,6 @@ def format_dataframe(df):
     df['Arbeitsende'] = df['Arbeitsende'].apply(lambda x: [[int(hm) for hm in t.split(':')] for t in x.split(',')])
     df['Arbeitsende'] = df['Arbeitsende'].apply(
         lambda x: f'{x[0][0] + x[1][0]}:{x[0][1] + x[1][1] if x[0][1] + x[1][1] != 0 else "00"}')
-
 
     drops = []
     for i in range(len(df) - 1):
@@ -90,8 +92,8 @@ def format_dataframe(df):
 
     blank = [None] * 6
     formatted = pd.DataFrame([blank] * 31,
-                        columns=['Arbeitsbeginn', 'Arbeitsende', 'Pausenzeiten von', 'Pausenzeiten bis', 'Arbeitszeit',
-                                 'Entlohnungsart'])
+                             columns=['Arbeitsbeginn', 'Arbeitsende', 'Pausenzeiten von', 'Pausenzeiten bis',
+                                      'Arbeitszeit', 'Entlohnungsart'])
     formatted.index += 1
 
     for i in range(1, 32):
@@ -138,9 +140,9 @@ if __name__ == '__main__':
 
     df_formatted = format_dataframe(df)
     df_formatted = add_monthly_sum(df_formatted, month_sum)
+    df_formatted.to_csv(os.path.join('/Users/nilsseitz/Desktop', f'{savepath}.csv'))
 
     df_official_formatted = format_dataframe(df_official)
     df_official_formatted = add_monthly_sum(df_official_formatted, month_sum_official)
-
-    df_formatted.to_csv(os.path.join('/Users/nilsseitz/Desktop', f'{savepath}.csv'))
     df_official_formatted.to_csv(os.path.join('/Users/nilsseitz/Desktop', f'{savepath}_official.csv'))
+
