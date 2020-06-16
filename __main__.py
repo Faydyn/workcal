@@ -1,15 +1,25 @@
 import os
+import sys
+
 import numpy as np
 import pandas as pd
 import itertools
 import datetime
 from datetime import date
 
-OFFICIAL_MAX = 48
-tday = date.today()
-endoflastmon = pd.Timestamp(tday - datetime.timedelta(days=tday.day))
-startoflastmon = pd.Timestamp(endoflastmon - datetime.timedelta(days=endoflastmon.day - 1))
-path = '/Users/nilsseitz/Desktop/work.txt'
+OFFICIAL_MAX: int = 48
+tday: datetime.date = date.today()
+endoflastmon: pd.Timestamp = pd.Timestamp(tday - datetime.timedelta(days=tday.day))
+startoflastmon: pd.Timestamp = pd.Timestamp(endoflastmon - datetime.timedelta(days=endoflastmon.day - 1))
+endoflastmon = pd.Timestamp(tday - datetime.timedelta(days=tday.day - 1))
+path: str = '/Users/nilsseitz/Desktop/work.txt'
+
+## OVERWRITE AND EXECUTE MANUALLY (NOT IN AUTOMATOR SCRIPT) FOR OTHER MONTHS
+# year = 2020
+# month = 6
+# startoflastmon = pd.Timestamp(date(year, month, 1))
+# endoflastmon = pd.Timestamp(date(year, month + 1, 1))
+
 
 
 def delta2min(delta):
@@ -17,11 +27,11 @@ def delta2min(delta):
 
 
 def add_worktime_splitshift(x):
-    return f'{x[0] + x[2]}:{(x[1] + x[3]) % 60 if (x[1] + x[3]) % 60 != 0 else "00"}'
+    return f'{(x[0] + x[2]) % 24}:{(x[1] + x[3]) % 60 if (x[1] + x[3]) % 60 != 0 else "00"}'
 
 
 def getmonth_ger(monthnum):
-    names = ['Januar', 'Februar', 'Maerz', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November',
+    names = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November',
              'Dezember']
     numtostr = dict((k, v) for k, v in enumerate(names, 1))
     return numtostr[monthnum]
@@ -40,14 +50,17 @@ def make_dataframe(single_shifts):
     workedlastmonth = workedlastmonth[workedlastmonth['datetime_shiftstart'] <= endoflastmon]
     workedlastmonth = workedlastmonth.drop(['Date (Start)', 'Date (End)', 'Time (Start)', 'Time (End)'], axis=1)
     workedlastmonth = workedlastmonth.reset_index(drop=True)
-    return workedlastmonth.fillna(0), workedlastmonth['amount_min'].sum() / 60
+    worktime_frac_hours = workedlastmonth['amount_min'].sum() / 60
+
+    return workedlastmonth.fillna(0), int(worktime_frac_hours) if  worktime_frac_hours.is_integer() else  worktime_frac_hours
 
 
 def make_official_df(workedlastmonth):
     official_split = OFFICIAL_MAX * 60
     sum_of_workinghours = workedlastmonth['amount_min'].sum()
     if official_split > sum_of_workinghours:  # Error otherwise!
-        return workedlastmonth.fillna(0), sum_of_workinghours / 60
+        worktime_in_hours = sum_of_workinghours / 60
+        return workedlastmonth.fillna(0), int(worktime_in_hours) if worktime_in_hours.is_integer() else worktime_in_hours
     else:
         workedlastmonth_official = workedlastmonth[workedlastmonth['amount_min'].cumsum() < official_split]
         rest = official_split - workedlastmonth_official['amount_min'].sum()
@@ -66,7 +79,7 @@ def format_dataframe(df):
     df['Arbeitsende'] = df['Arbeitsbeginn'] + ',' + df['Arbeitszeit']
     df['Arbeitsende'] = df['Arbeitsende'].apply(lambda x: [[int(hm) for hm in t.split(':')] for t in x.split(',')])
     df['Arbeitsende'] = df['Arbeitsende'].apply(
-        lambda x: f'{x[0][0] + x[1][0]}:{x[0][1] + x[1][1] if x[0][1] + x[1][1] != 0 else "00"}')
+        lambda x: f'{(x[0][0] + x[1][0]) % 24}:{(x[0][1] + x[1][1]) % 60 if (x[0][1] + x[1][1]) % 60 != 0 else "00"}')
 
     drops = []
     for i in range(len(df) - 1):
@@ -82,15 +95,14 @@ def format_dataframe(df):
         df = df.drop(row)
 
     df = df.drop(['datetime_shiftstart', 'amount_min'], axis=1)
-    df['Entlohnungsart'] = len(df) * [None]
 
     c = df.columns.tolist()
-    #   ['Arbeitsbeginn', 'Arbeitsende', 'Arbeitszeit', 'Tag', 'Entlohnungsart']
-    # ->  Tag, Arbeitsbeginn, Arbeitsende, von , bis, Arbeitszeit, Entlohnungsart
-    c[0], c[1], c[2], c[3], c[4], c[5], c[6] = c[3], c[0], c[1], c[-3], c[-2], c[2], c[-1]
+    #   ['Arbeitsbeginn', 'Arbeitsende', 'Arbeitszeit', 'Tag' ]
+    # ->  Tag, Arbeitsbeginn, Arbeitsende, von , bis, Arbeitszeit
+
+    c[0], c[1], c[2], c[3] = c[3], c[0], c[1], c[2]
     df = df[c]
     df.index += 1
-    df.index[df['Tag'] == 4].tolist()
 
     blank = [None] * 6
     formatted = pd.DataFrame([blank] * 31,
@@ -142,9 +154,18 @@ if __name__ == '__main__':
 
     df_formatted = format_dataframe(df)
     df_formatted = add_monthly_sum(df_formatted, month_sum)
+    overtime = month_sum - OFFICIAL_MAX
+    overtime_str = ''
+    if overtime > 0:
+        overtime_str = f'{overtime} Überstunden'
+    elif overtime < 0:
+        overtime_str = f'{-overtime} Minusstunden'
+
+    df_formatted.loc['Summe', 'Entlohnungsart'] = overtime_str
     df_formatted.to_csv(os.path.join('/Users/nilsseitz/Desktop', f'{savepath}.csv'))
 
     df_official_formatted = format_dataframe(df_official)
     df_official_formatted = add_monthly_sum(df_official_formatted, month_sum_official)
     df_official_formatted.to_csv(os.path.join('/Users/nilsseitz/Desktop', f'{savepath}_official.csv'))
 
+    sys.exit()
