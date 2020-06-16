@@ -1,2 +1,6 @@
 data
 .DS_Store
+*.idea
+*.png
+/.idea
+/images
