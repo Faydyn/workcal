@@ -85,6 +85,8 @@ def format_dataframe(df):
     df['Entlohnungsart'] = len(df) * [None]
 
     c = df.columns.tolist()
+    #   ['Arbeitsbeginn', 'Arbeitsende', 'Arbeitszeit', 'Tag', 'Entlohnungsart']
+    # ->  Tag, Arbeitsbeginn, Arbeitsende, von , bis, Arbeitszeit, Entlohnungsart
     c[0], c[1], c[2], c[3], c[4], c[5], c[6] = c[3], c[0], c[1], c[-3], c[-2], c[2], c[-1]
     df = df[c]
     df.index += 1
