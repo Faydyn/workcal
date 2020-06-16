@@ -52,8 +52,8 @@
 				<dict>
 					<key>fileNames</key>
 					<array>
-						<string>~/Documents/Arbeit/Waldperle/Stundenzettel_Official.numbers</string>
 						<string>~/Documents/Arbeit/Waldperle/Stunden2020</string>
+						<string>~/Documents/Arbeit/Waldperle/Stundenzettel_Official.numbers</string>
 					</array>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -104,14 +104,14 @@
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>761.500000:43.000000</string>
+				<string>761.500000:239.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -206,14 +206,14 @@
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>761.500000:84.000000</string>
+				<string>761.500000:342.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New Aliases.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -316,7 +316,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>761.500000:321.000000</string>
+				<string>761.500000:579.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Calendar Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -606,7 +606,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>761.500000:427.000000</string>
+				<string>761.500000:685.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New Text File.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -708,7 +708,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>761.500000:672.000000</string>
+				<string>761.500000:930.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -810,7 +810,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>761.500000:909.000000</string>
+				<string>761.500000:1167.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Specified Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -890,19 +890,19 @@ end run</string>
 			<key>to</key>
 			<string>7DDF8558-DFBF-4B58-AEA1-B2545DE6F04A - 7DDF8558-DFBF-4B58-AEA1-B2545DE6F04A</string>
 		</dict>
+		<key>12FD20B5-DF5B-44AE-844C-E1693C1020CD</key>
+		<dict>
+			<key>from</key>
+			<string>A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F - A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F</string>
+			<key>to</key>
+			<string>89892A1F-00AA-4B70-B516-7EB664611D9C - 89892A1F-00AA-4B70-B516-7EB664611D9C</string>
+		</dict>
 		<key>5980FB10-4903-44E1-9264-81D2E0123AE8</key>
 		<dict>
 			<key>from</key>
 			<string>43203CB7-86C9-47B9-AE4E-8550C92C72ED - 43203CB7-86C9-47B9-AE4E-8550C92C72ED</string>
 			<key>to</key>
 			<string>89A9EAC1-A993-4AA8-AD1A-0AEC380A5CC0 - 89A9EAC1-A993-4AA8-AD1A-0AEC380A5CC0</string>
-		</dict>
-		<key>727B5087-1007-4ED5-80EE-A06ACF201696</key>
-		<dict>
-			<key>from</key>
-			<string>A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F - A6ED2C49-8DA9-4EF9-AFEC-6FACD521378F</string>
-			<key>to</key>
-			<string>89892A1F-00AA-4B70-B516-7EB664611D9C - 89892A1F-00AA-4B70-B516-7EB664611D9C</string>
 		</dict>
 		<key>92CD23C0-17DC-4E93-9602-4227308B2AEE</key>
 		<dict>

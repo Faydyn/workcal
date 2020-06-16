@@ -161,6 +161,19 @@ if __name__ == '__main__':
     elif overtime < 0:
         overtime_str = f'{-overtime} Minusstunden'
 
+    with open('/Users/nilsseitz/Documents/Arbeit/Waldperle/Stunden2020/realworkhours/overtime.txt', 'r+') as f:
+        readin = f.read()
+        recent_overtime_str, recent_month = readin.split(',')
+        recent_overtime = float(recent_overtime_str)
+        recent_overtime += overtime
+
+    with open('/Users/nilsseitz/Documents/Arbeit/Waldperle/Stunden2020/realworkhours/overtime.txt', 'w') as f:
+        new_recent_month = getmonth_ger(tday.month)
+        if new_recent_month != recent_month:
+            f.write(f'{recent_overtime},{new_recent_month}')
+        else:
+            f.write(readin)
+
     df_formatted.loc['Summe', 'Entlohnungsart'] = overtime_str
     df_formatted.to_csv(os.path.join('/Users/nilsseitz/Desktop', f'{savepath}.csv'))
 
