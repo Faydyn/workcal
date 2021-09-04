@@ -37,7 +37,7 @@ def getmonth_ger(monthnum):
         'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August',
         'September', 'Oktober', 'November', 'Dezember'
     ]
-    numtostr = dict((k, v) for k, v in enumerate(names, 1))
+    numtostr = {k: v for k, v in enumerate(names, 1)}
     return numtostr[monthnum]
 
 
@@ -98,7 +98,7 @@ def format_dataframe(df):
         lambda x:
         f'{int(x) // 60 if int(x) // 60 != 0 else "00"}:{int(x) % 60 if int(x) % 60 != 0 else "00"}'
     )
-    df['Arbeitsende'] = df['Arbeitsbeginn'] + ',' + df['Arbeitszeit']
+    df['Arbeitsende'] = [f'{x},{y}' for x,y in zip(df['Arbeitsbeginn'],df['Arbeitszeit'])]
     df['Arbeitsende'] = df['Arbeitsende'].apply(
         lambda x: [[int(hm) for hm in t.split(':')] for t in x.split(',')])
     df['Arbeitsende'] = df['Arbeitsende'].apply(
